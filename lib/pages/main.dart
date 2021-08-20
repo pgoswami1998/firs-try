@@ -17,13 +17,11 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-
-    initialRoute: "/home",
+     //RinitialRoute: "/home",
       routes: {
-        "/":(context) => LoginPage(),
-        "home": (context) => HomePage(),
+        //"/":(context) => LoginPage(),
+        "/home": (context) => HomePage(),
         "/Login": (context) => LoginPage()
-
       },
     );
   }
