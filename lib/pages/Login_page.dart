@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_prahyuman/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -58,18 +59,19 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                     InkWell(
-                      onTap: () {
+                      onTap: () async{
                         setState(() {
                           changebutton = true;
                         });
-                        //Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        await Future.delayed(Duration(seconds : 1));
+                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                       },
                       child: AnimatedContainer(
                         duration: Duration(seconds:1),
                         width: changebutton ? 50:150,
                         height: 50,
                         alignment: Alignment.center,
-                        color: Colors.deepPurple,
+                       
                         child: changebutton?Icon(
                           Icons.done,
                           color:Colors.white,
@@ -86,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.deepPurple,
                             borderRadius: BorderRadius.circular(changebutton ? 50 : 8)),
                       ),
-                    )
+                    ),
                     //ElevatedButton(
                     //  child: Text("login"),
                     // style: TextButton.styleFrom(
